@@ -2,12 +2,26 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
-    <title>8bit Parallax Personal Site</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirecting...</title>
+    <script>
+      // GitHub Pages SPA redirect
+      // Store the original path and redirect to root where index.html will load
+      var path = window.location.pathname;
+      var search = window.location.search;
+      var hash = window.location.hash;
+      
+      if (path !== '/' && path !== '/index.html') {
+        // Store path in sessionStorage and redirect to root
+        sessionStorage.setItem('githubPagesRedirect', path + search + hash);
+        window.location.replace('/');
+      } else {
+        // If already on root, just go to index.html
+        window.location.replace('/index.html');
+      }
+    </script>
   </head>
   <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <p>Redirecting...</p>
   </body>
 </html>
